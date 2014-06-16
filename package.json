@@ -1,0 +1,47 @@
+{
+  "name": "ui-slider-dirty",
+  "version": "0.0.0",
+  "description": "This directive allows you to add a cool input[range] / slider component to your page. Dirty version of http://github.com/angular-ui/ui-slider",
+  "devDependencies": {
+    "gulp": "^3",
+    "gulp-util": "^2",
+    "gulp-load-plugins": "^0",
+    "gulp-rename": "^0",
+    "gulp-batch": "^0",
+    "gulp-changed": "^0",
+
+    "gulp-ruby-sass": "^0",
+    "gulp-autoprefixer": "^0",
+    "gulp-plumber": "^0",
+
+    "gulp-jshint": "^1",
+    "jshint-stylish": "^0",
+
+    "gulp-uglify": "^0",
+    "gulp-ngmin": "^0",
+
+    "karma": "^0",
+    "karma-jasmine": "^0.2",
+    "karma-coverage": "^0",
+    "karma-firefox-launcher": "^0",
+    "karma-chrome-launcher": "^0",
+    "karma-phantomjs-launcher": "^0",
+
+    "node-karma-wrapper": "^0",
+    "lodash.assign": "^2",
+    "lodash.after": "^2",
+    "angular-ui-publisher": "douglasduteil/angular-ui-publisher#refacto-v2.x",
+    "browser-sync": "^1"
+  },
+  "main": "src/ui-slider.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/douglasduteil/ui-slider-dirty.git"
+  },
+  "author": "https://github.com/douglasduteil/ui-slider-dirty/contributors",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/douglasduteil/ui-slider-dirty/issues"
+  },
+  "homepage": "https://github.com/douglasduteil/ui-slider-dirty"
+}

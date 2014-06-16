@@ -1,0 +1,72 @@
+<% extend 'layout/_page.html' %>
+
+<%
+  @pageTitle = 'Dressing'
+
+  # used on the html tag : ng-app="@pageAppName"
+  @pageAppName = 'dressingApp'
+%>
+
+<% block 'afterStylesheet' : %>
+<link rel="stylesheet" type="text/css" href="css/dressing.css" />
+<% end %>
+
+<% block 'afterScript' : %>
+<script>
+  angular.module('<%- @pageAppName %>', ['ui.slider', 'app-publisher'])
+    .controller('wearingCtrl', function(){
+      this.dresses = [
+        {
+          name : 'Firefox input[range]',
+          class : 'ff-like'
+        },
+        {
+          name : 'jQuery ui',
+          class : 'jqui-like'
+        }
+      ];
+
+      this.rangedDresses = [
+        {
+          name : 'Youtube range',
+          class : 'yt-like'
+        },
+        {
+          name : 'iOS 7 range',
+          class : 'ios7-like'
+        }
+      ];
+    });
+</script>
+<% end %>
+
+<section>
+
+  <div class="container">
+    <article>
+      <h3>Native input range</h3>
+      <input type="range" style="width: 100%">
+    </article>
+    <article>
+      <h3>UI.Slider <code>.ui-slider--default </code></h3>
+      <ui-slider></ui-slider>
+    </article>
+
+    <div ng-controller="wearingCtrl as wearingCtrl">
+      <article ng-repeat="dress in wearingCtrl.dresses track by dress.class">
+        <h3>{{ dress.name }} style <code>.ui-slider--{{ dress.class }} </code></h3>
+        <ui-slider class="" ng-class="'ui-slider--{{ dress.class }}'"></ui-slider>
+      </article>
+
+      <article ng-repeat="dress in wearingCtrl.rangedDresses track by dress.class">
+        <h3>{{ dress.name }} style <code>.ui-slider--{{ dress.class }} </code></h3>
+        <ui-slider options="{ range : 'min'}" class="" ng-class="'ui-slider--{{ dress.class }}'">
+          <ui-slider-thumb ng-model="dress.thumb"></ui-slider-thumb>
+          <ui-slider-range start="0" end="{{dress.thumb}}"></ui-slider-range>
+        </ui-slider>
+      </article>
+    </div>
+
+  </div>
+
+</section>
