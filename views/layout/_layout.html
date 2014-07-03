@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html ng-app="<%- @pageAppName %>">
+
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Angular UI ~ <%- @public.humaName %> Doc</title>
+
+  <!-- Le css -->
+  <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+  <link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Lato'/>
+  <link rel="stylesheet" type="text/css" href="css/prettify.css"/>
+  <link rel="stylesheet" type="text/css" href="css/style.css"/>
+
+
+  <% for linkCssUrl in @public.css : %>
+  <link rel="stylesheet" type="text/css" href="<%- linkCssUrl %>"/>
+  <% end %>
+
+  <% content 'afterStylesheet' : %>
+
+</head>
+
+<body ng-app="app-publisher">
+
+<!-- navbar
+================================================== -->
+<% include 'layout/_nav' %>
+
+
+<!-- content
+================================================== -->
+<% content %>
+
+
+<!-- javascript
+================================================== -->
+
+<% for scriptUrl in @jsFiles : %>
+<script src="<%- scriptUrl %>"></script>
+<% end %>
+
+<% content 'afterScript' : %>
+
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+/* =UI.Slider
+-----------------------------------------------------------------------------*/
+/* line 4, ui-slider.scss */
+.ui-slider {
+  position: relative;
+  display: block;
+}
+/* line 8, ui-slider.scss */
+.ui-slider:after {
+  position: absolute;
+  left: 0;
+  right: 0;
+  display: block;
+  content: '';
+  z-index: -1;
+}
+/* line 17, ui-slider.scss */
+.ui-slider__thumb {
+  position: absolute;
+  cursor: pointer;
+}
+/* line 22, ui-slider.scss */
+.ui-slider__range {
+  position: absolute;
+  height: 100%;
+  left: 0;
+  right: 100%;
+}
+
+/* =UI.Slider default style
+-----------------------------------------------------------------------------*/
+/* line 33, ui-slider.scss */
+.ui-slider--default {
+  height: 21px;
+  margin-right: 11px;
+}
+/* line 44, ui-slider.scss */
+.ui-slider--default:after, .ui-slider--default .ui-slider__range {
+  height: 5px;
+  top: 8px;
+  right: -11px;
+}
+/* line 50, ui-slider.scss */
+.ui-slider--default:after {
+  background: #ddd;
+}
+/* line 54, ui-slider.scss */
+.ui-slider--default .ui-slider__thumb {
+  width: 11px;
+  height: 21px;
+  background: #ccc;
+  border: solid 1px #aaaaaa;
+}
+/* line 60, ui-slider.scss */
+.ui-slider--default .ui-slider__thumb:hover {
+  background: #ddd;
+}
+/* line 65, ui-slider.scss */
+.ui-slider--default .ui-slider__range {
+  background: #aaa;
+}

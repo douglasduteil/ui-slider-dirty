@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html ng-app="indexApp">
+
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Angular UI ~ UI.Slider--DIRTY Doc</title>
+
+  <!-- Le css -->
+  <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+  <link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Lato'/>
+  <link rel="stylesheet" type="text/css" href="css/prettify.css"/>
+  <link rel="stylesheet" type="text/css" href="css/style.css"/>
+
+
+    <link rel="stylesheet" type="text/css" href="dist/ui-slider.css"/>
+  
+  
+</head>
+
+<body ng-app="app-publisher">
+
+<!-- navbar
+================================================== -->
+<header class="navbar navbar-static-top bs-docs-nav" id="top" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <button ng-init="_navCollapsed = true" ng-click="_navCollapsed = !_navCollapsed" class="navbar-toggle" type="button">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="index.html" class="navbar-brand">UI.Slider--DIRTY</a>
+
+    </div>
+    <nav collapse="_navCollapsed" class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+
+      <ul class="nav navbar-nav">
+
+                <li>
+          <a href="dressing.html">Dressing</a>
+        </li>
+        
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="http://angular-ui.github.io">by AngularUI</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+<!-- content
+================================================== -->
+
+
+<!-- header
+================================================== -->
+<div class="bs-docs-header">
+  <div class="container">
+    <h1>UI.Slider--DIRTY</h1>
+
+    <p>This directive allows you to add a cool input[range] / slider component to your page. Dirty version of http://github.com/angular-ui/ui-slider</p>
+
+    <p>
+      <a class="btn btn-outline-inverse btn-lg" href="https://github.com/douglasduteil/ui-slider-dirty">Code on Github</a>
+      <a class="btn btn-outline-inverse btn-lg"
+         href="https://github.com/douglasduteil/ui-slider-dirty/releases/tag/v0.0.0">
+        <i class="glyphicon glyphicon-download-alt"></i> Download
+        <small>(0.0.0)</small>
+      </a>
+    </p>
+  </div>
+</div>
+<header class="bs-header">
+
+  <div class="bs-social container">
+    <ul class="bs-social-buttons list-inline list-unstyled">
+      <li>
+        <iframe
+          src="http://ghbtns.com/github-btn.html?user=angular-ui&amp;repo=ui-slider-dirty&amp;type=watch&amp;count=true"
+          allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
+      </li>
+      <li>
+        <iframe
+          src="http://ghbtns.com/github-btn.html?user=angular-ui&amp;repo=ui-slider-dirty&amp;type=fork&amp;count=true"
+          allowtransparency="true" frameborder="0" scrolling="0" width="95" height="20"></iframe>
+      </li>
+      <li>
+        <a href="https://twitter.com/share" class="twitter-share-button"
+           data-hashtags="angularjs">Tweet</a>
+        <script>!function (d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (!d.getElementById(id)) {
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "//platform.twitter.com/widgets.js";
+            fjs.parentNode.insertBefore(js, fjs);
+          }
+        }(document, "script", "twitter-wjs");</script>
+      </li>
+      <li>
+        <!-- Place this tag where you want the +1 button to render. -->
+        <div class="g-plusone" data-size="medium"></div>
+
+        <!-- Place this tag after the last +1 button tag. -->
+        <script type="text/javascript">
+          (function () {
+            var po = document.createElement('script');
+            po.type = 'text/javascript';
+            po.async = true;
+            po.src = 'https://apis.google.com/js/plusone.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(po, s);
+          })();
+        </script>
+      </li>
+    </ul>
+  </div>
+</header>
+
+<!-- Le main
+================================================== -->
+<div class="container">
+
+  
+
+
+<section id="layout" >
+
+  <div class="container">
+    <article>
+      <h3>Minimal demo</h3>
+
+      <div class="row">
+        <div class="col-sm-6">Native input[type="range"] :</div>
+        <div class="col-sm-6"><input type="range" style=" width: 100%; "></div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-6"> UI.Slider (no options) :</div>
+        <div class="col-sm-6">
+          <div ui-slider></div>
+        </div>
+      </div>
+    </article>
+
+    <article>
+      <h3>Simple ngModel demos</h3>
+
+      <div class="row">
+        <div class="col-sm-6"> current value : {{_sliderValue}} %</div>
+        <div class="col-sm-6">
+          <div class="ui-slider ui-slider--default">
+            <div class="ui-slider__thumb" ng-model="_sliderValue"></div>
+          </div>
+        </div>
+      </div>
+
+    </article>
+
+    <article ng-init="_sliderUnderValue=50">
+      <h3>Step demo</h3>
+
+      <div class="row">
+        <div class="col-sm-12 text-center">current value : {{_sliderUnderValue}}</div>
+      </div>
+
+      <h4>No step (default 1)</h4>
+
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="ui-slider ui-slider--default">
+            <div class="ui-slider__thumb" ng-model="_sliderUnderValue"></div>
+          </div>
+        </div>
+      </div>
+
+      <h4>step : 5</h4>
+
+      <div class="row">
+        <div class="col-sm-12 overflow-hidden">
+          <div class="ui-slider ui-slider--default">
+            <div class="ui-slider__thumb" ng-model="_sliderUnderValue" step="5"></div>
+          </div>
+        </div>
+      </div>
+
+
+      <h4>step : 0.5</h4>
+
+      <div class="row">
+        <div class="col-sm-12 overflow-hidden">
+          <div class="ui-slider ui-slider--default">
+            <div class="ui-slider__thumb" ng-model="_sliderUnderValue" step="0.5"></div>
+          </div>
+        </div>
+      </div>
+
+      <h4>step : <input type="number" class="form-control" ng-model="_sliderStep" ng-init="_sliderStep=25"/></h4>
+
+      <div class="row">
+        <div class="col-sm-12 overflow-hidden">
+          <div class="ui-slider ui-slider--default">
+            <div class="ui-slider__thumb" ng-model="_sliderUnderValue" step="{{_sliderStep}}"></div>
+          </div>
+        </div>
+      </div>
+
+    </article>
+
+    <article>
+      <h3>Max &amp; Min ngModel demos</h3>
+
+      <h4>Fixed numbers</h4>
+
+      <div class="row">
+        <div class="col-sm-6"> current value : {{_sliderMinMaxValue0}}</div>
+        <div class="col-sm-6">
+          <div class="ui-slider ui-slider--default" min="-50" max="50">
+            <div class="ui-slider__thumb" ng-model="_sliderMinMaxValue0"></div>
+          </div>
+          <span class="relative pull-left">-50</span>
+          <span class="relative pull-right">50</span>
+        </div>
+      </div>
+
+      <h4>Dynamic numbers</h4>
+
+      <div class="row">
+        <div class="col-sm-6">Min : <input type="number" class="form-control" ng-model="_sliderMin"
+                                           ng-init="_sliderMin=-25"/></div>
+        <div class="col-sm-6">Max : <input type="number" class="form-control" ng-model="_sliderMax"
+                                           ng-init="_sliderMax=25"/></div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-sm-12 text-center">current value : {{_sliderMinMaxValue1}}</div>
+        <div class="col-sm-12 overflow-hidden clearfix" ng-init="_sliderMinMaxValue1=0">
+          <div class="ui-slider ui-slider--default" min="{{_sliderMin}}" max="{{_sliderMax}}">
+            <div class="ui-slider__thumb" ng-model="_sliderMinMaxValue1"></div>
+          </div>
+          <span class="relative pull-left">{{_sliderMin}}</span>
+          <span class="relative pull-right">{{_sliderMax}}</span>
+        </div>
+      </div>
+
+    </article>
+
+    <article>
+      <h3>In Form validation</h3>
+
+      <div class="row">
+        <div class="col-sm-6 clearfix">
+          <form name="_myForm">
+            <input type="number" class="form-control" ng-model="_formModel" step="0.5"/>
+
+            <div class="ui-slider ui-slider--default" min="10" max="20">
+              <div class="ui-slider__thumb" ng-model="_formModel" name="input"></div>
+            </div>
+
+            <span class="relative pull-left">10</span>
+            <span class="relative pull-right">20</span>
+          </form>
+        </div>
+        <div class="col-sm-6">_formModel = {{_formModel}} <br/>
+          _myForm.input.$valid = {{_myForm.input.$valid}} <br/>
+          _myForm.input.$error = {{_myForm.input.$error}} <br/>
+          _myForm.$valid = {{_myForm.$valid}}
+        </div>
+      </div>
+    </article>
+
+    <article>
+      <h3>Using range min</h3>
+
+      <div class="row">
+        <div class="col-sm-12" ng-init="_c=25">
+          <div class="ui-slider ui-slider--default">
+            <div class="ui-slider__range" end="{{_c}}"></div>
+            <div class="ui-slider__thumb" ng-model="_c"></div>
+          </div>
+        </div>
+        <div class="col-sm-12" ng-init="_d=75">
+          <div class="ui-slider ui-slider--default">
+            <div class="ui-slider__range" start="{{_d}}"></div>
+            <div class="ui-slider__thumb" ng-model="_d"></div>
+          </div>
+        </div>
+        <div class="col-sm-12">
+          <div class="ui-slider ui-slider--default">
+            <div class="ui-slider__range" start='{{_c}}' end='{{_d}}'></div>
+            <div class="ui-slider__thumb" ng-model='_c' max='{{_d}}'></div>
+            <div class="ui-slider__thumb" ng-model='_d' min='{{_c}}'></div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article>
+      <h3>Color picker demos</h3>
+
+      <div class="row">
+        <div class="col-sm-6" ng-init="_red=128;_green=128;_blue=128">
+          <div class="ui-slider ui-slider--default" min="0" max="255">
+            <div class="ui-slider__range" end="{{_red}}"></div>
+            <div class="ui-slider__thumb" ng-model="_red"></div>
+          </div>
+          <div class="ui-slider ui-slider--default" min="0" max="255">
+            <div class="ui-slider__range" end="{{_green}}"></div>
+            <div class="ui-slider__thumb" ng-model="_green"></div>
+          </div>
+          <div class="ui-slider ui-slider--default" min="0" max="255">
+            <div class="ui-slider__range" end="{{_blue}}"></div>
+            <div class="ui-slider__thumb" ng-model="_blue"></div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+
+          <style>
+            .pickedColor {
+              width: 100%;
+              height: 3em;
+              margin: 1em 0;
+            }
+          </style>
+
+          <div class="pickedColor"
+               ng-style="{ 'background-color' : 'rgb('+ _red + ','+ _green + ','+ _blue + ')' }"></div>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+
+
+</div>
+
+
+
+<!-- javascript
+================================================== -->
+
+<script src="bower_components/prettify.js"></script>
+<script src="bower_components/angular/angular.min.js"></script>
+<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+<script src="js/prettifyDirective.js"></script>
+<script src="js/plunker.js"></script>
+<script src="js/app-publisher.js"></script>
+<script src="bower_components/raf/index.js"></script>
+<script src="bower_components/angular-touch/angular-touch.js"></script>
+<script src="dist/ui-slider.js"></script>
+
+<script>
+  angular.module('indexApp', ['ui.slider', 'app-publisher']);
+</script>
+
+</body>
+
+</html>
